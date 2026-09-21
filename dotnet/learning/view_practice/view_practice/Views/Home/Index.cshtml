@@ -1,0 +1,31 @@
+@using view_practice.Models
+
+
+@{
+    string appTitle = "View Practice";
+    Person person = new Person()
+    {
+        name = "Mazharul Islam",
+        dateOfBirth = Convert.ToDateTime("1997-05-25")
+    };
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>@appTitle</title>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <h1>Employee</h1>
+    <p>Name: @person.name</p>
+    <p>Date of Birth: @person.dateOfBirth</p>
+    @{
+        double age = Math.Round((DateTime.Now - person.dateOfBirth).TotalDays / 365.25);
+    }
+    <p>Age: @age years old</p>
+</body>
+
+</html>
