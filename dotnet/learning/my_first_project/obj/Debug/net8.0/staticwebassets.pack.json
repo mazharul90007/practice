@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "/home/mazharul-islam/Desktop/Sourabh/Web/practice/dotnet/learning/my_first_project/wwwroot/ana_soft.jpg",
+      "PackagePath": "staticwebassets/ana_soft.jpg"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.my_first_project.props",
+      "PackagePath": "build\\my_first_project.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.my_first_project.props",
+      "PackagePath": "buildMultiTargeting\\my_first_project.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.my_first_project.props",
+      "PackagePath": "buildTransitive\\my_first_project.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.my_first_project.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

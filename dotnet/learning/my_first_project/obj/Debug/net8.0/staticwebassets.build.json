@@ -1,0 +1,39 @@
+{
+  "Version": 1,
+  "Hash": "8KCspCGZ70yL6nhhtmLIvMC4whn+zxf6KZ5gPodgMXY=",
+  "Source": "my_first_project",
+  "BasePath": "_content/my_first_project",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "my_first_project/wwwroot",
+      "Source": "my_first_project",
+      "ContentRoot": "/home/mazharul-islam/Desktop/Sourabh/Web/practice/dotnet/learning/my_first_project/wwwroot/",
+      "BasePath": "_content/my_first_project",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/home/mazharul-islam/Desktop/Sourabh/Web/practice/dotnet/learning/my_first_project/wwwroot/ana_soft.jpg",
+      "SourceId": "my_first_project",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/mazharul-islam/Desktop/Sourabh/Web/practice/dotnet/learning/my_first_project/wwwroot/",
+      "BasePath": "_content/my_first_project",
+      "RelativePath": "ana_soft.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/ana_soft.jpg"
+    }
+  ]
+}

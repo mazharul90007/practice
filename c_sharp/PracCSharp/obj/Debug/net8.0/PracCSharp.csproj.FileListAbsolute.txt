@@ -1,0 +1,14 @@
+/home/mazharul-islam/Desktop/Sourabh/Web/practice/c_sharp/PracCSharp/bin/Debug/net8.0/PracCSharp
+/home/mazharul-islam/Desktop/Sourabh/Web/practice/c_sharp/PracCSharp/bin/Debug/net8.0/PracCSharp.deps.json
+/home/mazharul-islam/Desktop/Sourabh/Web/practice/c_sharp/PracCSharp/bin/Debug/net8.0/PracCSharp.runtimeconfig.json
+/home/mazharul-islam/Desktop/Sourabh/Web/practice/c_sharp/PracCSharp/bin/Debug/net8.0/PracCSharp.dll
+/home/mazharul-islam/Desktop/Sourabh/Web/practice/c_sharp/PracCSharp/bin/Debug/net8.0/PracCSharp.pdb
+/home/mazharul-islam/Desktop/Sourabh/Web/practice/c_sharp/PracCSharp/obj/Debug/net8.0/PracCSharp.GeneratedMSBuildEditorConfig.editorconfig
+/home/mazharul-islam/Desktop/Sourabh/Web/practice/c_sharp/PracCSharp/obj/Debug/net8.0/PracCSharp.AssemblyInfoInputs.cache
+/home/mazharul-islam/Desktop/Sourabh/Web/practice/c_sharp/PracCSharp/obj/Debug/net8.0/PracCSharp.AssemblyInfo.cs
+/home/mazharul-islam/Desktop/Sourabh/Web/practice/c_sharp/PracCSharp/obj/Debug/net8.0/PracCSharp.csproj.CoreCompileInputs.cache
+/home/mazharul-islam/Desktop/Sourabh/Web/practice/c_sharp/PracCSharp/obj/Debug/net8.0/PracCSharp.dll
+/home/mazharul-islam/Desktop/Sourabh/Web/practice/c_sharp/PracCSharp/obj/Debug/net8.0/refint/PracCSharp.dll
+/home/mazharul-islam/Desktop/Sourabh/Web/practice/c_sharp/PracCSharp/obj/Debug/net8.0/PracCSharp.pdb
+/home/mazharul-islam/Desktop/Sourabh/Web/practice/c_sharp/PracCSharp/obj/Debug/net8.0/PracCSharp.genruntimeconfig.cache
+/home/mazharul-islam/Desktop/Sourabh/Web/practice/c_sharp/PracCSharp/obj/Debug/net8.0/ref/PracCSharp.dll
