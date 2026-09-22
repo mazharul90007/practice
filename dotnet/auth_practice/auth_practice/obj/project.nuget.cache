@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qjx6L/Z0sDE=",
+  "dgSpecHash": "wYRDWW2HHMo=",
   "success": true,
-  "projectFilePath": "/Users/sourabh/Desktop/Sourabh/Web/practice/dot_net/auth_practice/auth_practice/auth_practice.csproj",
+  "projectFilePath": "/Users/sourabh/Desktop/Sourabh/Web/practice/dotnet/auth_practice/auth_practice/auth_practice.csproj",
   "expectedPackageFiles": [
     "/Users/sourabh/.nuget/packages/azure.core/1.50.0/azure.core.1.50.0.nupkg.sha512",
     "/Users/sourabh/.nuget/packages/azure.identity/1.17.1/azure.identity.1.17.1.nupkg.sha512",

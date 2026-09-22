@@ -3703,11 +3703,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/sourabh/Desktop/Sourabh/Web/practice/dot_net/auth_practice/auth_practice/auth_practice.csproj",
+      "projectUniqueName": "/Users/sourabh/Desktop/Sourabh/Web/practice/dotnet/auth_practice/auth_practice/auth_practice.csproj",
       "projectName": "auth_practice",
-      "projectPath": "/Users/sourabh/Desktop/Sourabh/Web/practice/dot_net/auth_practice/auth_practice/auth_practice.csproj",
+      "projectPath": "/Users/sourabh/Desktop/Sourabh/Web/practice/dotnet/auth_practice/auth_practice/auth_practice.csproj",
       "packagesPath": "/Users/sourabh/.nuget/packages/",
-      "outputPath": "/Users/sourabh/Desktop/Sourabh/Web/practice/dot_net/auth_practice/auth_practice/obj/",
+      "outputPath": "/Users/sourabh/Desktop/Sourabh/Web/practice/dotnet/auth_practice/auth_practice/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/sourabh/.nuget/NuGet/NuGet.Config"

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/sourabh/Desktop/Sourabh/Web/practice/dotnet/learning/my_first_project/my_first_project.csproj",
-      "projectName": "my_first_project",
-      "projectPath": "/Users/sourabh/Desktop/Sourabh/Web/practice/dotnet/learning/my_first_project/my_first_project.csproj",
+      "projectUniqueName": "/Users/sourabh/Desktop/Sourabh/Web/practice/dotnet/service_paractice/Services/Services.csproj",
+      "projectName": "Services",
+      "projectPath": "/Users/sourabh/Desktop/Sourabh/Web/practice/dotnet/service_paractice/Services/Services.csproj",
       "packagesPath": "/Users/sourabh/.nuget/packages/",
-      "outputPath": "/Users/sourabh/Desktop/Sourabh/Web/practice/dotnet/learning/my_first_project/obj/",
+      "outputPath": "/Users/sourabh/Desktop/Sourabh/Web/practice/dotnet/service_paractice/Services/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/sourabh/.nuget/NuGet/NuGet.Config"
@@ -69,18 +69,11 @@
             "version": "[8.0.28, 8.0.28]"
           },
           {
-            "name": "Microsoft.NETCore.App.Host.osx-arm64",
-            "version": "[8.0.28, 8.0.28]"
-          },
-          {
             "name": "Microsoft.NETCore.App.Ref",
             "version": "[8.0.28, 8.0.28]"
           }
         ],
         "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }

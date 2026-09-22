@@ -6,9 +6,52 @@
     Person person = new Person()
     {
         name = "Mazharul Islam",
-        dateOfBirth = Convert.ToDateTime("1997-05-25")
+        dateOfBirth = null,
+        personGender = Gender.Male
     };
+
+    var people = new List<Person>
+{
+    new Person()
+    {
+        name = "Mazharul Islam",
+        dateOfBirth = null,
+        personGender = Gender.Male
+    },
+
+    new Person()
+    {
+        name = "Nusrat Jahan",
+        dateOfBirth = new DateTime(2000, 05, 05),
+        personGender = Gender.Female
+    },
+
+    new Person()
+    {
+        name = "Rakib Hasan",
+        dateOfBirth = null,
+        personGender = Gender.Male
+    }
+};
+
+    string alertMessage = $@"<script>alert('{people.Count} people found')</script>";
 }
+
+@functions {
+    double? GetAge(DateTime? dateOfBirth)
+    {
+        if (dateOfBirth is not null)
+        {
+            return Math.Round((DateTime.Now - dateOfBirth.Value).TotalDays / 365.25);
+        }
+        else
+        {
+            return null;
+        }
+    }
+}
+
+
 
 <!DOCTYPE html>
 <html>
@@ -20,12 +63,50 @@
 
 <body>
     <h1>Employee</h1>
+    @Html.Raw(alertMessage)
     <p>Name: @person.name</p>
     <p>Date of Birth: @person.dateOfBirth</p>
-    @{
-        double age = Math.Round((DateTime.Now - person.dateOfBirth).TotalDays / 365.25);
+    @if (person.dateOfBirth.HasValue)
+    {
+        double age = Math.Round((DateTime.Now - person.dateOfBirth).Value.TotalDays / 365.25);
+        <p>Age: @age years old</p>
     }
-    <p>Age: @age years old</p>
+    else
+    {
+        <p>Age: Unknown</p>
+    }
+
+    @switch (person.personGender)
+    {
+        case Gender.Male:
+            <p>You are a male</p>
+            break;
+
+        case Gender.Female:
+            <p>Your are a female</p>
+            break;
+
+        default:
+            <p>You are a hijra</p>
+            break;
+    }
+
+
+    <h2>Some People</h2>
+    <div>
+        @foreach (Person person in people)
+        {
+            <p>Name: @person.name</p>
+            @if (person.dateOfBirth != null)
+            {
+                <p>DoB: @GetAge(person.dateOfBirth) years old</p>
+            }
+            <p>Gender: @person.personGender</p>
+            <span>===================================</span>
+
+        }
+    </div>
+
 </body>
 
 </html>
