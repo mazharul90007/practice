@@ -1,31 +1,29 @@
 {
   "format": 1,
   "restore": {
-    "/Users/sourabh/Desktop/Sourabh/Web/practice/dotnet/learning/view_practice/view_practice/view_practice.csproj": {}
+    "/home/mazharul-islam/Desktop/Sourabh/Web/practice/dotnet/learning/view_practice/view_practice/view_practice.csproj": {}
   },
   "projects": {
-    "/Users/sourabh/Desktop/Sourabh/Web/practice/dotnet/learning/view_practice/view_practice/view_practice.csproj": {
+    "/home/mazharul-islam/Desktop/Sourabh/Web/practice/dotnet/learning/view_practice/view_practice/view_practice.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/sourabh/Desktop/Sourabh/Web/practice/dotnet/learning/view_practice/view_practice/view_practice.csproj",
+        "projectUniqueName": "/home/mazharul-islam/Desktop/Sourabh/Web/practice/dotnet/learning/view_practice/view_practice/view_practice.csproj",
         "projectName": "view_practice",
-        "projectPath": "/Users/sourabh/Desktop/Sourabh/Web/practice/dotnet/learning/view_practice/view_practice/view_practice.csproj",
-        "packagesPath": "/Users/sourabh/.nuget/packages/",
-        "outputPath": "/Users/sourabh/Desktop/Sourabh/Web/practice/dotnet/learning/view_practice/view_practice/obj/",
+        "projectPath": "/home/mazharul-islam/Desktop/Sourabh/Web/practice/dotnet/learning/view_practice/view_practice/view_practice.csproj",
+        "packagesPath": "/home/mazharul-islam/.nuget/packages/",
+        "outputPath": "/home/mazharul-islam/Desktop/Sourabh/Web/practice/dotnet/learning/view_practice/view_practice/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/sourabh/.nuget/NuGet/NuGet.Config"
+          "/home/mazharul-islam/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "/opt/homebrew/Cellar/dotnet/10.0.301/libexec/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
-            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {}
           }
@@ -39,12 +37,10 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "10.0.300"
+        }
       },
       "frameworks": {
         "net8.0": {
-          "framework": "net8.0",
           "targetAlias": "net8.0",
           "imports": [
             "net461",
@@ -57,20 +53,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.28, 8.0.28]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.osx-arm64",
-              "version": "[8.0.28, 8.0.28]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.28, 8.0.28]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -79,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/opt/homebrew/Cellar/dotnet/10.0.301/libexec/sdk/10.0.301/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/home/mazharul-islam/.dotnet/sdk/8.0.424/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "/home/mazharul-islam/Desktop/Sourabh/Web/practice/dotnet/learning/view_practice/view_practice/wwwroot/StyleSheet.css",
+      "PackagePath": "staticwebassets/StyleSheet.css"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.view_practice.props",
+      "PackagePath": "build\\view_practice.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.view_practice.props",
+      "PackagePath": "buildMultiTargeting\\view_practice.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.view_practice.props",
+      "PackagePath": "buildTransitive\\view_practice.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.view_practice.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

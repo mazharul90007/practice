@@ -1,41 +1,5 @@
 @using view_practice.Models
-
-
-@{
-    string appTitle = "View Practice";
-    Person person = new Person()
-    {
-        name = "Mazharul Islam",
-        dateOfBirth = null,
-        personGender = Gender.Male
-    };
-
-    var people = new List<Person>
-{
-    new Person()
-    {
-        name = "Mazharul Islam",
-        dateOfBirth = null,
-        personGender = Gender.Male
-    },
-
-    new Person()
-    {
-        name = "Nusrat Jahan",
-        dateOfBirth = new DateTime(2000, 05, 05),
-        personGender = Gender.Female
-    },
-
-    new Person()
-    {
-        name = "Rakib Hasan",
-        dateOfBirth = null,
-        personGender = Gender.Male
-    }
-};
-
-    string alertMessage = $@"<script>alert('{people.Count} people found')</script>";
-}
+@model IEnumerable<Person>
 
 @functions {
     double? GetAge(DateTime? dateOfBirth)
@@ -51,25 +15,30 @@
     }
 }
 
+@{
+    Person person = (Person)ViewData["person"]!;
+    @* List<Person> people = (List<Person>)ViewData["people"]! ?? new List<Person>(); *@
+}
+
 
 
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>@appTitle</title>
+    <title>@ViewData["appTitle"]</title>
     <meta charset="utf-8" />
+    <link href="~/StyleSheet.css" rel="stylesheet" />
 </head>
 
 <body>
     <h1>Employee</h1>
-    @Html.Raw(alertMessage)
+    <h3>Number of Person @ViewBag.people.Count</h3>
     <p>Name: @person.name</p>
     <p>Date of Birth: @person.dateOfBirth</p>
     @if (person.dateOfBirth.HasValue)
     {
-        double age = Math.Round((DateTime.Now - person.dateOfBirth).Value.TotalDays / 365.25);
-        <p>Age: @age years old</p>
+        <p>Age: @GetAge(person.dateOfBirth) years old</p>
     }
     else
     {
@@ -83,26 +52,27 @@
             break;
 
         case Gender.Female:
-            <p>Your are a female</p>
+            <p>You are a female</p>
             break;
 
         default:
-            <p>You are a hijra</p>
+            <p>Gender: Other</p>
             break;
     }
 
 
     <h2>Some People</h2>
-    <div>
-        @foreach (Person person in people)
+    <div class="page-content">
+        @foreach (Person p in Model)
         {
-            <p>Name: @person.name</p>
-            @if (person.dateOfBirth != null)
-            {
-                <p>DoB: @GetAge(person.dateOfBirth) years old</p>
-            }
-            <p>Gender: @person.personGender</p>
-            <span>===================================</span>
+            <div class="box">
+                <p>Name: @p.name</p>
+                @if (p.dateOfBirth != null)
+                {
+                    <p>DoB: @GetAge(p.dateOfBirth) years old</p>
+                }
+                <p>Gender: @p.personGender</p>
+            </div>
 
         }
     </div>

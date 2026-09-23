@@ -1,1 +1,39 @@
-{"Version":1,"Hash":"OUuwIEbh4Kcyvsv9XknK6kt7kc3A+4iw/APV5RBdSbo=","Source":"view_practice","BasePath":"/","Mode":"Root","ManifestType":"Build","ReferencedProjectsConfiguration":[],"DiscoveryPatterns":[],"Assets":[],"Endpoints":[]}
+{
+  "Version": 1,
+  "Hash": "fVJpeTzdM6iZkdx86npSKdgH2wLcjXFTdMU0DSSKh5o=",
+  "Source": "view_practice",
+  "BasePath": "_content/view_practice",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "view_practice/wwwroot",
+      "Source": "view_practice",
+      "ContentRoot": "/home/mazharul-islam/Desktop/Sourabh/Web/practice/dotnet/learning/view_practice/view_practice/wwwroot/",
+      "BasePath": "_content/view_practice",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/home/mazharul-islam/Desktop/Sourabh/Web/practice/dotnet/learning/view_practice/view_practice/wwwroot/StyleSheet.css",
+      "SourceId": "view_practice",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/mazharul-islam/Desktop/Sourabh/Web/practice/dotnet/learning/view_practice/view_practice/wwwroot/",
+      "BasePath": "_content/view_practice",
+      "RelativePath": "StyleSheet.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/StyleSheet.css"
+    }
+  ]
+}
