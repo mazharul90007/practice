@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "PZPRQv3g0sg=",
+  "dgSpecHash": "XE/GfwVDutg=",
   "success": true,
   "projectFilePath": "/Users/sourabh/Desktop/Sourabh/Web/practice/dotnet/learning/my_first_project/my_first_project.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/sourabh/.nuget/packages/microsoft.netcore.app.ref/8.0.28/microsoft.netcore.app.ref.8.0.28.nupkg.sha512",
+    "/Users/sourabh/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.28/microsoft.aspnetcore.app.ref.8.0.28.nupkg.sha512",
+    "/Users/sourabh/.nuget/packages/microsoft.netcore.app.host.osx-arm64/8.0.28/microsoft.netcore.app.host.osx-arm64.8.0.28.nupkg.sha512"
+  ],
   "logs": []
 }
