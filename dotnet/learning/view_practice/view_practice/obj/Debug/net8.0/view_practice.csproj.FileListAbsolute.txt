@@ -58,3 +58,4 @@
 /home/mazharul-islam/Desktop/Sourabh/Web/practice/dotnet/learning/view_practice/view_practice/obj/Debug/net8.0/view_practice.pdb
 /home/mazharul-islam/Desktop/Sourabh/Web/practice/dotnet/learning/view_practice/view_practice/obj/Debug/net8.0/view_practice.genruntimeconfig.cache
 /home/mazharul-islam/Desktop/Sourabh/Web/practice/dotnet/learning/view_practice/view_practice/obj/Debug/net8.0/ref/view_practice.dll
+/Users/sourabh/Desktop/Sourabh/Web/practice/dotnet/learning/view_practice/view_practice/bin/Debug/net8.0/view_practice.staticwebassets.runtime.json
