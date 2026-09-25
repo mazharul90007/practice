@@ -1,0 +1,15 @@
+
+<h1>About</h1>
+@{
+    ListModel listModel = new ListModel();
+    listModel.ListTitle = "Countries";
+    listModel.ListItems = new List<string>
+    {
+        "Bangladesh",
+        "India",
+        "Australia",
+        "Usa"
+    };
+}
+
+<partial name="_AboutPartialView" model="listModel"></partial>
