@@ -1,0 +1,22 @@
+@{
+    ViewBag.Title = "Product";
+    Layout = "~/Views/Shared/_ProductLayout.cshtml";
+}
+
+@{
+    ProductGrid products = new ProductGrid
+    {
+        GridTitle = "Laptops",
+        products = new List<Product>
+        {
+            new Product(){ProductId = 1, ProductName = "Asus v2", ProductPrice = 80000},
+            new Product(){ProductId = 2, ProductName = "Asus zen", ProductPrice = 170000},
+            new Product(){ProductId = 3, ProductName = "HP 20P9", ProductPrice = 65000},
+            new Product(){ProductId = 4, ProductName = "MSI Gaming3", ProductPrice = 240000}
+        }
+    };
+}
+
+<h1>Product</h1>
+@await Component.InvokeAsync("Grid", products)
+@* <vc:grid></vc:grid> *@

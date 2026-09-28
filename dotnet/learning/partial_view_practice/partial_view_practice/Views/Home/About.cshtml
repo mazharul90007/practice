@@ -1,3 +1,7 @@
+@{
+    ViewBag.Title = "About";
+}
+
 
 <h1>About</h1>
 @{
@@ -13,3 +17,5 @@
 }
 
 <partial name="_AboutPartialView" model="listModel"></partial>
+
+@await Component.InvokeAsync("Grid")

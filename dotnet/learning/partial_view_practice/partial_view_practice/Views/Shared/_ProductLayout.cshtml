@@ -9,19 +9,18 @@
         <div class="container">
             <div class="navbar">
                 <div class="navbar-brand">
-                    Demo Partial Layout
+                    View Demo App
                 </div>
                 <ul>
                     <li><a href="~/">Home</a></li>
                     <li><a href="~/about">About</a></li>
                     <li><a href="~/product">Product</a></li>
                 </ul>
+            </div>
 
+            <div class="page-content">
+                @RenderBody()
             </div>
         </div>
-        <div class="page-content">
-            @RenderBody()
-        </div>
-        
     </body>
 </html>

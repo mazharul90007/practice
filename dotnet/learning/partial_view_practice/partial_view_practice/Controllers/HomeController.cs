@@ -35,5 +35,11 @@ namespace Controllers
             return PartialView("_ListPartialView", listModel);
         }
 
+        [Route("product")]
+        public IActionResult Product()
+        {
+            return View();
+        }
+
     }
 }
