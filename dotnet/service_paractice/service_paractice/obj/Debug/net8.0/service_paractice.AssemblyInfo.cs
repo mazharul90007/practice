@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("service_paractice")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2c976fbc1ecf28afc3aed0c10f346ccf30eccc3d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d42ded754f9bb99cacd31d2e4f5259fcdfaee2c3")]
 [assembly: System.Reflection.AssemblyProductAttribute("service_paractice")]
 [assembly: System.Reflection.AssemblyTitleAttribute("service_paractice")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
