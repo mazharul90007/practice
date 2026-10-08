@@ -1,0 +1,6 @@
+{
+  "weatherapi": {
+    "clientId": "customconfig-123456",
+    "clientSecret": "customconfig-abcdef"
+  }
+}

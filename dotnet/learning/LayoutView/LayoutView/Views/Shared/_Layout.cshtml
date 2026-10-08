@@ -1,0 +1,42 @@
+@{
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"]</title>
+    <link href="~/StyleSheet.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="navbar-brand">
+                Layout View
+            </div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/products">All Product</a></li>
+                <li><a href="/search-products">Search product</a></li>
+                <li><a href="/order-products">Orders</a></li>
+            </ul>
+
+        </div>
+
+        <div class="page-content">
+            @RenderBody()
+        </div>
+
+        <div class="footer_section">
+            @RenderSection("footer_section", false)
+        </div>
+
+    </div>
+</body>
+
+</html>
