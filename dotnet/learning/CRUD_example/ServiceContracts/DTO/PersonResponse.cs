@@ -1,4 +1,5 @@
 using Entities;
+using ServiceContracts.Enums;
 
 namespace ServiceContracts.DTO
 {
@@ -56,6 +57,25 @@ namespace ServiceContracts.DTO
         {
             return $"Person Id: {PersonId}, Person Name: {PersonName}, Email: {Email}, Date of Birth: {DateOfBirth?.ToString("dd MMM yyyy")}, Gender: {Gender}, Country Id: {CountryId}, Country: {Country}, Address: {Address}, Receive News Letters: {ReceiveNewsLetters}, Age: {Age}";
         }
+
+        /// <summary>
+        /// Converts the current PersonResponse object into a PersonUpdateRequest object
+        /// </summary>
+        /// <returns>Returns the converted PersonUpdateRequest object</returns>
+        public PersonUpdateRequest ToPersonUpdateRequest()
+        {
+            return new PersonUpdateRequest()
+            {
+                PersonId = PersonId,
+                PersonName = PersonName,
+                Email = Email,
+                DateOfBirth = DateOfBirth,
+                Gender = Gender == null ? null : Enum.Parse<GenderOptions>(Gender, true),
+                CountryId = CountryId,
+                Address = Address,
+                ReceiveNewsLetters = ReceiveNewsLetters
+            };
+        }
     }
 
 
@@ -80,6 +100,21 @@ namespace ServiceContracts.DTO
                 Address = person.Address,
                 ReceiveNewsLetters = person.ReceiveNewsLetters,
                 Age = (person.DateOfBirth != null) ? Math.Round((DateTime.Now - person.DateOfBirth.Value).TotalDays / 365.25) : null
+            };
+        }
+
+        public static PersonUpdateRequest ToPersonUpdateResponse(this Person person)
+        {
+            return new PersonUpdateRequest()
+            {
+                PersonId = person.PersonId,
+                PersonName = person.PersonName,
+                Email = person.Email,
+                DateOfBirth = person.DateOfBirth,
+                Gender = person.Gender == null ? null : Enum.Parse<GenderOptions>(person.Gender, true),
+                CountryId = person.CountryId,
+                Address = person.Address,
+                ReceiveNewsLetters = person.ReceiveNewsLetters,
             };
         }
     }
