@@ -525,13 +525,13 @@ namespace CRUDTest
             CountryResponse country_response_from_add = _countryService.AddCountry(country_add_request);
 
             //Create a Person object and Add the object into service
-            PersonAddRequest person_add_request = new PersonAddRequest() { PersonName = "Jhon", CountryId = country_response_from_add.CountryId };
+            PersonAddRequest person_add_request = new PersonAddRequest() { PersonName = "Jhon", CountryId = country_response_from_add.CountryId, Address = "Dhaka, Bangladesh", DateOfBirth = DateTime.Parse("1997-05-25"), Email = "mazharul90007@gmail.com", Gender = GenderOptions.Male};
 
             PersonResponse person_response_from_add = _personService.AddPerson(person_add_request);
 
             PersonUpdateRequest person_update_request = person_response_from_add.ToPersonUpdateRequest();
 
-            person_add_request.PersonName = null;
+            person_update_request.PersonName = null;
 
             //Assert
             Assert.Throws<ArgumentException>(() =>
