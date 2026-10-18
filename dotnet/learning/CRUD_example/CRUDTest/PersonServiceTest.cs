@@ -16,8 +16,8 @@ namespace CRUDTest
         //constructor
         public PersonServiceTest(ITestOutputHelper testOutputHelper)
         {
-            _personService = new PersonsService();
-            _countryService = new CountriesService();
+            _personService = new PersonsService(false);
+            _countryService = new CountriesService(false);
             _testOutputHelper = testOutputHelper;
         }
 
@@ -525,7 +525,7 @@ namespace CRUDTest
             CountryResponse country_response_from_add = _countryService.AddCountry(country_add_request);
 
             //Create a Person object and Add the object into service
-            PersonAddRequest person_add_request = new PersonAddRequest() { PersonName = "Jhon", CountryId = country_response_from_add.CountryId, Address = "Dhaka, Bangladesh", DateOfBirth = DateTime.Parse("1997-05-25"), Email = "mazharul90007@gmail.com", Gender = GenderOptions.Male};
+            PersonAddRequest person_add_request = new PersonAddRequest() { PersonName = "Jhon", CountryId = country_response_from_add.CountryId, Address = "Dhaka, Bangladesh", DateOfBirth = DateTime.Parse("1997-05-25"), Email = "mazharul90007@gmail.com", Gender = GenderOptions.Male };
 
             PersonResponse person_response_from_add = _personService.AddPerson(person_add_request);
 
@@ -573,5 +573,38 @@ namespace CRUDTest
 
         #endregion
 
+        #region DeletePerson
+        //If you supply an invalid personId, It should return false
+        [Fact]
+        public void DeletePerson_InvalidPersonId()
+        {
+            //Act
+            bool isDeleted = _personService.DeletePerson(Guid.NewGuid());
+
+            //Assert
+            Assert.False(isDeleted);
+        }
+
+        //If you supply an valid personId, It should return true
+        [Fact]
+        public void DeletePerson_ValidPersonId()
+        {
+            //Arrange
+            //Create a Country object and add the object into service
+            CountryAddRequest country_add_request = new CountryAddRequest() { CountryName = "UK" };
+            CountryResponse country_response_from_add = _countryService.AddCountry(country_add_request);
+
+            //Create a Person object and Add the object into service
+            PersonAddRequest person_add_request = new PersonAddRequest() { PersonName = "Jhon", CountryId = country_response_from_add.CountryId, Address = "Dhaka, Bangladesh", DateOfBirth = DateTime.Parse("1997-05-25"), Email = "mazharul90007@gmail.com", Gender = GenderOptions.Male };
+
+            PersonResponse person_response_from_add = _personService.AddPerson(person_add_request);
+
+            //Act
+            bool isDeleted = _personService.DeletePerson(person_response_from_add.PersonId);
+
+            //Assert
+            Assert.True(isDeleted);
+        }
+        #endregion
     }
 }

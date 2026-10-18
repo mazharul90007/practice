@@ -15,10 +15,72 @@ namespace Services
         private readonly ICountriesService _countriesService;
 
         //constructor
-        public PersonsService()
+        public PersonsService(bool initialize = true)
         {
             _persons = new List<Person>();
             _countriesService = new CountriesService();
+
+            if (initialize)
+            {
+                _persons.AddRange(new List<Person>
+                {
+                    new Person
+                    {
+                        PersonId = Guid.Parse("6a60b993-b97b-4b61-bd5b-37ca1a7c4803"),
+                        PersonName = "John Smith",
+                        Email = "john.smith@example.com",
+                        DateOfBirth = DateTime.Parse("1990-05-14"),
+                        Gender = GenderOptions.Male.ToString(),
+                        CountryId = Guid.Parse("d65be9ce-46d1-4f8b-b132-bd0a024ba436"),
+                        Address = "12 Main Street, New York",
+                        ReceiveNewsLetters = true
+                    },
+                    new Person
+                    {
+                        PersonId = Guid.Parse("c198299e-77db-46cc-848a-ce21fdfac1fe"),
+                        PersonName = "Emma Wilson",
+                        Email = "emma.wilson@example.com",
+                        DateOfBirth = DateTime.Parse("1993-08-22"),
+                        Gender = GenderOptions.Female.ToString(),
+                        CountryId = Guid.Parse("647b7454-94a5-4e7f-a83e-02d6ec920f82"),
+                        Address = "45 Maple Avenue, Toronto",
+                        ReceiveNewsLetters = false
+                    },
+                    new Person
+                    {
+                        PersonId = Guid.Parse("5567169a-ec42-4281-b995-ee2988722c3e"),
+                        PersonName = "Oliver Brown",
+                        Email = "oliver.brown@example.com",
+                        DateOfBirth = DateTime.Parse("1988-01-30"),
+                        Gender = GenderOptions.Male.ToString(),
+                        CountryId = Guid.Parse("d67e5387-0d35-4784-b7c5-6f77b1a59536"),
+                        Address = "7 Baker Street, London",
+                        ReceiveNewsLetters = true
+                    },
+                    new Person
+                    {
+                        PersonId = Guid.Parse("02a8296a-33d6-434b-baf9-1ae99423baf4"),
+                        PersonName = "Priya Sharma",
+                        Email = "priya.sharma@example.com",
+                        DateOfBirth = DateTime.Parse("1995-11-09"),
+                        Gender = GenderOptions.Female.ToString(),
+                        CountryId = Guid.Parse("f06919f2-43c6-4255-8523-4d1bc30a01b6"),
+                        Address = "21 MG Road, Bengaluru",
+                        ReceiveNewsLetters = true
+                    },
+                    new Person
+                    {
+                        PersonId = Guid.Parse("48eae510-3573-42c1-9133-ab1bca68d04e"),
+                        PersonName = "Liam Taylor",
+                        Email = "liam.taylor@example.com",
+                        DateOfBirth = DateTime.Parse("1991-03-18"),
+                        Gender = GenderOptions.Male.ToString(),
+                        CountryId = Guid.Parse("2ed188ec-0464-4a99-b723-996b2283d4c6"),
+                        Address = "88 Beach Road, Sydney",
+                        ReceiveNewsLetters = false
+                    }
+                });
+            }
         }
 
         private PersonResponse ConvertPersonToPersonResponse(Person person)
@@ -205,6 +267,25 @@ namespace Services
             matchingPerson.ReceiveNewsLetters = personUpdateRequest.ReceiveNewsLetters;
 
             return ConvertPersonToPersonResponse(matchingPerson);
+        }
+
+        //Delete a Person details by PersonId
+        public bool DeletePerson(Guid? personId)
+        {
+            if (personId == null)
+            {
+                throw new ArgumentNullException(nameof(personId));
+            }
+
+            Person? person = _persons.FirstOrDefault(p => p.PersonId == personId);
+
+            if (person == null)
+            {
+                return false;
+            }
+
+            _persons.RemoveAll(p => p.PersonId == personId);
+            return true;
         }
     }
 }

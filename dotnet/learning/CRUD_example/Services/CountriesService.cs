@@ -10,9 +10,20 @@ public class CountriesService : ICountriesService
     private readonly List<Country> _countries;
 
     //constructor
-    public CountriesService()
+    public CountriesService(bool initialize = true)
     {
         _countries = new List<Country>();
+        if (initialize)
+        {
+            _countries.AddRange(new List<Country>
+            {
+                new Country { CountryId = Guid.Parse("d65be9ce-46d1-4f8b-b132-bd0a024ba436"), CountryName = "USA" },
+                new Country { CountryId = Guid.Parse("647b7454-94a5-4e7f-a83e-02d6ec920f82"), CountryName = "Canada" },
+                new Country { CountryId = Guid.Parse("d67e5387-0d35-4784-b7c5-6f77b1a59536"), CountryName = "UK" },
+                new Country { CountryId = Guid.Parse("f06919f2-43c6-4255-8523-4d1bc30a01b6"), CountryName = "India" },
+                new Country { CountryId = Guid.Parse("2ed188ec-0464-4a99-b723-996b2283d4c6"), CountryName = "Australia" }
+            });
+        }
     }
 
 
