@@ -7,28 +7,70 @@
 
 <form action="~/persons/index" method="get">
     <h1>My Person</h1>
+    @* ===========Search Area========= *@
     <div class="box flex">
         <div class="flex-1">
             <select class="form-input" name="searchBy">
                 @foreach (var field in ViewBag.SearchFields)
                 {
-                    <option value="@field.Key">@field.Value</option>
+                    if (field.Key == ViewBag.CurrentSearchBy)
+                    {
+                        <option value="@field.Key" selected="selected">@field.Value</option>
+                    }
+                    else
+                    {
+                        <option value="@field.Key">@field.Value</option>
+                    }
+                    
                 }
                 @* searchBy=PersonName&searchString=abc *@
-            </select> 
+            </select>
         </div>
         <div class="flex-1">
-            <input type="search" id="Search" class="form-input" placeholder="Search" name="searchString">
+            <input type="search" id="Search" class="form-input" placeholder="Search" name="searchString"
+                   value="@ViewBag.CurrentSearchString">
         </div>
         <div class="flex-1">
             <button class="button button-blue-back">Search</button>
             <a href="~/persons/index" class="link-hover">Clear all</a>
         </div>
     </div>
+    @* =============Table================= *@
     <table class="table w-100 mt">
         <thead>
             <tr>
-                <th>Person Name</th>
+                @if (ViewBag.CurrentSortBy == nameof(PersonResponse.PersonName) && ViewBag.CurrentSortOrder ==
+                SortOrderOptions.ASC.ToString())
+                {
+                    <th>
+                        <a
+                            href="~/persons/index?searchBy=@ViewBag.CurrentSearchBy&searchString=@ViewBag.CurrentSearchString&sortBy=@nameof(PersonResponse.PersonName)&sortOrder=@nameof(SortOrderOptions.DESC)">Person
+                            Name
+                        </a>
+                        <i class="fa-solid fa-sort-up"></i>
+                    </th>
+                }
+                else if (ViewBag.CurrentSortBy == nameof(PersonResponse.PersonName) && ViewBag.CurrentSortOrder ==
+            SortOrderOptions.DESC.ToString())
+                {
+                    <th>
+                        <a
+                            href="~/persons/index?searchBy=@ViewBag.CurrentSearchBy&searchString=@ViewBag.CurrentSearchString&sortBy=@nameof(PersonResponse.PersonName)&sortOrder=@nameof(SortOrderOptions.ASC) ">Person
+                            Name
+                        </a>
+                        <i class="fa-solid fa-sort-down "></i>
+                    </th>
+                }
+                else
+                {
+                    <th>
+                        <a
+                            href="~/persons/index?searchBy=@ViewBag.CurrentSearchBy&searchString=@ViewBag.CurrentSearchString&sortBy=@nameof(PersonResponse.PersonName)&sortOrder=@nameof(SortOrderOptions.ASC) ">Person
+                            Name
+                        </a>
+                    </th>
+                }
+                
                 <th>Email</th>
                 <th>Date of Birth</th>
                 <th>Age</th>
