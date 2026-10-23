@@ -6,7 +6,7 @@ builder.Services.AddControllersWithViews();
 
 //add services into IoC container
 builder.Services.AddScoped<ICountriesService, CountriesService>();
-builder.Services.AddScoped<IPersonService, PersonsService>();
+builder.Services.AddSingleton<IPersonService, PersonsService>();
 
 var app = builder.Build();
 if (builder.Environment.IsDevelopment())

@@ -5,18 +5,21 @@ using ServiceContracts.Enums;
 
 namespace Controllers
 {
+    [Route("persons")]
     public class PersonsController : Controller
     {
         //private fields
         private readonly IPersonService _personService;
+        private readonly ICountriesService _countryService;
 
         //constructor
-        public PersonsController(IPersonService personService)
+        public PersonsController(IPersonService personService, ICountriesService countriesService)
         {
             _personService = personService;
+            _countryService = countriesService;
         }
 
-        [Route("persons/index")]
+        [Route("index")]
         [Route("/")]
         public IActionResult Index(string searchBy, string? searchString, string sortBy = nameof(PersonResponse.PersonName), SortOrderOptions sortOrder = SortOrderOptions.ASC)
         {
@@ -41,6 +44,39 @@ namespace Controllers
             ViewBag.CurrentSortOrder = sortOrder.ToString();
 
             return View(sortedPersons); //Views/Persons/Index.cshtml
+        }
+
+
+        //Executes when the user clicks on "Create Person" hyperlink (while opening the create view)
+        [Route("create")]
+        [HttpGet]
+        public IActionResult Create()
+        {
+            List<CountryResponse> countries = _countryService.GetAllCountries();
+
+            ViewBag.Countries = countries;
+            return View();
+        }
+
+        [Route("create")]
+        [HttpPost]
+        public IActionResult Create(PersonAddRequest personAddRequest)
+        {
+            if (!ModelState.IsValid)
+            {
+                List<CountryResponse> countries = _countryService.GetAllCountries();
+
+                ViewBag.Countries = countries;
+
+                ViewBag.Errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage).ToList();
+                return View();
+            }
+
+            //Call the service method
+            PersonResponse personResponse = _personService.AddPerson(personAddRequest);
+
+            //Navigate to index action method (It makes another get request to persons/index)
+            return RedirectToAction("Index", "Persons");
         }
     }
 }

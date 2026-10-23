@@ -122,7 +122,7 @@ namespace Services
         //==============Get all persons===============
         public List<PersonResponse> GetAllPerson()
         {
-            return _persons.Select(p => p.ToPersonResponse()).ToList();
+            return _persons.Select(p => ConvertPersonToPersonResponse(p)).ToList();
         }
 
         //==============Get person by Id================
@@ -140,7 +140,7 @@ namespace Services
                 return null;
             }
 
-            return person.ToPersonResponse();
+            return ConvertPersonToPersonResponse(person);
         }
 
         //===============Search persons by search key===============

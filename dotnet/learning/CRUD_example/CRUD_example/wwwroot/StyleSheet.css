@@ -273,6 +273,7 @@ body {
   border: none;
   border-radius: 6px;
   font-size: 1em;
+  font-family: inherit;
   cursor: pointer;
   transition: background-color 0.3s;
 }
@@ -320,4 +321,86 @@ body {
 }
 .button-blue-back:hover {
   background-color: #055c87;
+}
+
+.button-green-back {
+  background-color: #2e8b57;
+  color: #ffffff;
+}
+.button-green-back:hover {
+  background-color: #236b43;
+}
+
+/* ---------- Links ---------- */
+.link-hover {
+  color: #1383a4;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.link-hover:hover {
+  color: #055c87;
+  text-decoration: underline;
+}
+
+/* ---------- Forms (Create / Edit) ---------- */
+.form-field {
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+.form-label {
+  display: inline-block;
+  font-weight: 600;
+  color: #333333;
+}
+.pt {
+  padding-top: 8px;
+}
+select.form-input {
+  cursor: pointer;
+}
+.flex-1:has(> input[type="radio"]) {
+  display: flex;
+  align-items: center;
+  min-height: 42px;
+}
+input[type="radio"].form-input {
+  width: 1em;
+  height: 1em;
+  padding: 0px;
+  margin: 0px 6px 0px 0px;
+  accent-color: #01759d;
+  cursor: pointer;
+}
+input[type="radio"].form-input + label {
+  margin-right: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+.w-50 form > button {
+  margin-top: 10px;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 6px;
+  background-color: #01759d;
+  color: #ffffff;
+  font-size: 1em;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.w-50 form > button:hover {
+  background-color: #055c87;
+}
+
+@media screen and (max-width: 599px) {
+  .form-field {
+    flex-direction: column;
+  }
+  .pt {
+    padding-top: 0px;
+    margin-bottom: 4px;
+  }
+  .form-input {
+    width: 100%;
+  }
 }
