@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using ServiceContracts;
 using ServiceContracts.DTO;
 using ServiceContracts.Enums;
@@ -54,7 +55,10 @@ namespace Controllers
         {
             List<CountryResponse> countries = _countryService.GetAllCountries();
 
-            ViewBag.Countries = countries;
+            ViewBag.Countries = countries.Select(c => new SelectListItem() { Text = c.CountryName, Value = c.CountryId.ToString() });
+
+            // new SelectListItem() { Text = "Sourabh", Value = "1" };
+            //<option value = "1">Sourabh</option>
             return View();
         }
 
