@@ -7,7 +7,7 @@
 <a asp-controller="Persons" asp-action="Index" class="link-hover">Back to Persons list</a>
 <h2>Create Person</h2>
 
-<div class="w-50">
+<div class="center-box">
     <form asp-controller="Persons" asp-action="Create" method="post">
         @* Person Name *@
         <div class="form-field flex">
@@ -16,6 +16,7 @@
             </div>
             <div class="flex-1">
                 <input asp-for="PersonName" class="form-input">
+                <span asp-validation-for="PersonName" class="text-red"></span>
             </div>
         </div>
 
@@ -26,6 +27,8 @@
             </div>
             <div class="flex-1">
                 <input asp-for="Email" class="form-input">
+                <span asp-validation-for="Email" class="text-red"></span>
+                <span asp-validation-for="Email" class="text-red"></span>
             </div>
         </div>
 
@@ -36,6 +39,7 @@
             </div>
             <div class="flex-1">
                 <input asp-for="DateOfBirth" class="form-input">
+                <span asp-validation-for="DateOfBirth" class="text-red"></span>
             </div>
         </div>
 
@@ -46,14 +50,18 @@
             </div>
             <div class="flex-1">
 
-                @{
+                <div>
+                    @{
                     string[] genders = (string[])Enum.GetNames(typeof(GenderOptions));
                 }
                 @foreach (string gender in genders)
                 {
-                    <input asp-for="@gender" type="radio" name="Gender" class="form-input" value="@gender ">
+                    <input type="radio" id="@gender" name="Gender" class="form-input" value="@gender" data-val="true" data-val-required="Please select a gender">
                     <label for="@gender">@gender</label>
                 }
+                </div>
+
+                <span asp-validation-for="Gender" class="text-red"></span>
             </div>
         </div>
 
@@ -66,6 +74,7 @@
                 <select asp-for="CountryId" class="form-input" asp-items="@ViewBag.Countries">
                     <option value="">Please Select</option>
                 </select>
+                <span asp-validation-for="CountryId" class="text-red"></span>
             </div>
         </div>
 
@@ -76,6 +85,7 @@
             </div>
             <div class="flex-1">
                 <textarea asp-for="Address" class="form-input"></textarea>
+                <span asp-validation-for="Address" class="text-red"></span>
             </div>
         </div>
 
@@ -96,7 +106,9 @@
             <div class="flex-1">
                 <button class="button button-green-back">Create</button>
 
-                @if (ViewBag.Errors != null)
+                <span asp-validation-summary="All" class="text-red"></span>
+
+                @* @if (ViewBag.Errors != null)
                 {
                     <div class="text-red ml">
                         <ul>
@@ -106,8 +118,20 @@
                             }
                         </ul>
                     </div>
-                }
+                } *@
             </div>
         </div>
     </form>
 </div>
+
+@section scripts
+{
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/4.0.0/jquery.min.js"    integrity="sha512-8LENNbXmzI/Gbj+OwXmqR6V4QaUAw0/porPzy1+dQoJqC0JPHedWoe0DDOTL2uHA5XXJyIsPtiMHH86pVlay6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" asp-fallback-test="window.jQuery" asp-fallback-src="~/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.22.1/jquery.validate.min.js" integrity="sha512-qu7dMuIm2f0KcKZ3BOoP4c+Hn+r4E8PbD2Ro4rmKsOyheCxcwhzQpf6SojA76dn+owqfANzfTFUTkGA+HpHjOA==" crossorigin="anonymous" referrerpolicy="no-referrer" asp-fallback-test="window.jQuery.validator" asp-fallback-src="~/jquery.validate.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js" integrity="sha512-xq+Vm8jC94ynOikewaQXMEkJIOBp7iArs3IhFWSWdRT3Pq8wFz46p+ZDFAR7kHnSFf+zUv52B3prRYnbDRdgog==" crossorigin="anonymous" referrerpolicy="no-referrer" asp-fallback-test="window.jQuery.validator.unobstrusive" asp-fallback-src="~/jquery.validate.unobtrusive.min.js"></script>
+
+}

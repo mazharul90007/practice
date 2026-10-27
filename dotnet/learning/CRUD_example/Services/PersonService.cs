@@ -239,7 +239,7 @@ namespace Services
         }
 
         //Update Person details by PersonId
-        public PersonResponse UpdatePerson(PersonUpdateRequest personUpdateRequest)
+        public PersonResponse UpdatePerson(PersonUpdateRequest? personUpdateRequest)
         {
             if (personUpdateRequest == null)
             {

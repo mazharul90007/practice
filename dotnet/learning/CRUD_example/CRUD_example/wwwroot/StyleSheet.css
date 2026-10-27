@@ -63,13 +63,13 @@ body {
   row-gap: 4px;
 }
 .list > li {
-    padding: 4px 8px;
-    border-radius: 4px;
-    border: 1px solid green;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid green;
 }
-.list > li:hover{
-    background-color: #b9f7d1;
-    cursor: pointer;
+.list > li:hover {
+  background-color: #b9f7d1;
+  cursor: pointer;
 }
 .table {
   border-collapse: collapse;
@@ -109,7 +109,7 @@ body {
 .trading-panel {
   background-color: #f0f0f0;
 }
-.trading-panel-flex{
+.trading-panel-flex {
   flex-direction: column;
 }
 .w-25 {
@@ -141,6 +141,10 @@ body {
 }
 .text-center {
   text-align: center;
+}
+.center-box {
+  width: 70%;
+  margin: auto;
 }
 .margin-auto {
   margin: auto;
@@ -329,6 +333,14 @@ body {
 }
 .button-green-back:hover {
   background-color: #236b43;
+}
+
+.button-red-back {
+  background-color: #e04444;
+  color: #ffffff;
+}
+.button-red-back:hover {
+  background-color: #ce3232;
 }
 
 /* ---------- Links ---------- */
