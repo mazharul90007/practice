@@ -7,23 +7,12 @@ namespace Services;
 public class CountriesService : ICountriesService
 {
     //private field
-    private readonly List<Country> _countries;
+    private readonly PersonsDbContext _db;
 
     //constructor
-    public CountriesService(bool initialize = true)
+    public CountriesService(PersonsDbContext personsDbContext)
     {
-        _countries = new List<Country>();
-        if (initialize)
-        {
-            _countries.AddRange(new List<Country>
-            {
-                new Country { CountryId = Guid.Parse("d65be9ce-46d1-4f8b-b132-bd0a024ba436"), CountryName = "USA" },
-                new Country { CountryId = Guid.Parse("647b7454-94a5-4e7f-a83e-02d6ec920f82"), CountryName = "Canada" },
-                new Country { CountryId = Guid.Parse("d67e5387-0d35-4784-b7c5-6f77b1a59536"), CountryName = "UK" },
-                new Country { CountryId = Guid.Parse("f06919f2-43c6-4255-8523-4d1bc30a01b6"), CountryName = "India" },
-                new Country { CountryId = Guid.Parse("2ed188ec-0464-4a99-b723-996b2283d4c6"), CountryName = "Australia" }
-            });
-        }
+        _db = personsDbContext;
     }
 
 
@@ -42,7 +31,7 @@ public class CountriesService : ICountriesService
             throw new ArgumentException("Country name can't be null or empty", nameof(countryAddRequest.CountryName));
         }
         //countryName can't be duplicate
-        if (_countries.Any(c => c.CountryName == countryAddRequest.CountryName))
+        if (_db.Countries.Any(c => c.CountryName == countryAddRequest.CountryName))
         {
 
             throw new ArgumentException("Country name can't be duplicate", nameof(countryAddRequest.CountryName));
@@ -56,8 +45,9 @@ public class CountriesService : ICountriesService
         //generate CountryId
         country.CountryId = Guid.NewGuid();
 
-        //Add country object into _countries
-        _countries.Add(country);
+        //Add country object into _db
+        _db.Countries.Add(country);
+        _db.SaveChanges();
 
         return country.ToCountryResponse();
     }
@@ -67,7 +57,7 @@ public class CountriesService : ICountriesService
 
     public List<CountryResponse> GetAllCountries()
     {
-        return _countries.Select(country => country.ToCountryResponse()).ToList();
+        return _db.Countries.Select(country => country.ToCountryResponse()).ToList();
     }
 
     //===============Get Country by Id==================
@@ -78,7 +68,7 @@ public class CountriesService : ICountriesService
             return null;
         }
 
-        Country? country_response_from_list = _countries.FirstOrDefault(c => c.CountryId == countryId);
+        Country? country_response_from_list = _db.Countries.FirstOrDefault(c => c.CountryId == countryId);
 
         if (country_response_from_list == null)
         {

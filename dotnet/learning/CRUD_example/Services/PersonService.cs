@@ -1,6 +1,7 @@
 
 using System.ComponentModel.DataAnnotations;
 using Entities;
+using Microsoft.EntityFrameworkCore;
 using ServiceContracts;
 using ServiceContracts.DTO;
 using ServiceContracts.Enums;
@@ -11,86 +12,17 @@ namespace Services
     public class PersonsService : IPersonService
     {
         //private field
-        private readonly List<Person> _persons;
+        private readonly PersonsDbContext _db;
         private readonly ICountriesService _countriesService;
 
         //constructor
-        public PersonsService(bool initialize = true)
+        public PersonsService(PersonsDbContext personsDbContext, ICountriesService countriesService)
         {
-            _persons = new List<Person>();
-            _countriesService = new CountriesService();
-
-            if (initialize)
-            {
-                _persons.AddRange(new List<Person>
-                {
-                    new Person
-                    {
-                        PersonId = Guid.Parse("6a60b993-b97b-4b61-bd5b-37ca1a7c4803"),
-                        PersonName = "John Smith",
-                        Email = "john.smith@example.com",
-                        DateOfBirth = DateTime.Parse("1990-05-14"),
-                        Gender = GenderOptions.Male.ToString(),
-                        CountryId = Guid.Parse("d65be9ce-46d1-4f8b-b132-bd0a024ba436"),
-                        Address = "12 Main Street, New York",
-                        ReceiveNewsLetters = true
-                    },
-                    new Person
-                    {
-                        PersonId = Guid.Parse("c198299e-77db-46cc-848a-ce21fdfac1fe"),
-                        PersonName = "Emma Wilson",
-                        Email = "emma.wilson@example.com",
-                        DateOfBirth = DateTime.Parse("1993-08-22"),
-                        Gender = GenderOptions.Female.ToString(),
-                        CountryId = Guid.Parse("647b7454-94a5-4e7f-a83e-02d6ec920f82"),
-                        Address = "45 Maple Avenue, Toronto",
-                        ReceiveNewsLetters = false
-                    },
-                    new Person
-                    {
-                        PersonId = Guid.Parse("5567169a-ec42-4281-b995-ee2988722c3e"),
-                        PersonName = "Oliver Brown",
-                        Email = "oliver.brown@example.com",
-                        DateOfBirth = DateTime.Parse("1988-01-30"),
-                        Gender = GenderOptions.Male.ToString(),
-                        CountryId = Guid.Parse("d67e5387-0d35-4784-b7c5-6f77b1a59536"),
-                        Address = "7 Baker Street, London",
-                        ReceiveNewsLetters = true
-                    },
-                    new Person
-                    {
-                        PersonId = Guid.Parse("02a8296a-33d6-434b-baf9-1ae99423baf4"),
-                        PersonName = "Priya Sharma",
-                        Email = "priya.sharma@example.com",
-                        DateOfBirth = DateTime.Parse("1995-11-09"),
-                        Gender = GenderOptions.Female.ToString(),
-                        CountryId = Guid.Parse("f06919f2-43c6-4255-8523-4d1bc30a01b6"),
-                        Address = "21 MG Road, Bengaluru",
-                        ReceiveNewsLetters = true
-                    },
-                    new Person
-                    {
-                        PersonId = Guid.Parse("48eae510-3573-42c1-9133-ab1bca68d04e"),
-                        PersonName = "Liam Taylor",
-                        Email = "liam.taylor@example.com",
-                        DateOfBirth = DateTime.Parse("1991-03-18"),
-                        Gender = GenderOptions.Male.ToString(),
-                        CountryId = Guid.Parse("2ed188ec-0464-4a99-b723-996b2283d4c6"),
-                        Address = "88 Beach Road, Sydney",
-                        ReceiveNewsLetters = false
-                    }
-                });
-            }
+            _db = personsDbContext;
+            _countriesService = countriesService;
         }
 
-        private PersonResponse ConvertPersonToPersonResponse(Person person)
-        {
-            //convert the Person object into PersonResponse type
-            PersonResponse personResponse = person.ToPersonResponse();
 
-            personResponse.Country = _countriesService.GetCountryByCountryId(person.CountryId)?.CountryName;
-            return personResponse;
-        }
 
         //=================Add a person==================
         public PersonResponse AddPerson(PersonAddRequest? personAddRequest)
@@ -111,10 +43,11 @@ namespace Services
             person.PersonId = Guid.NewGuid();
 
             //add the Person object to person list
-            _persons.Add(person);
+            _db.Persons.Add(person);
+            _db.SaveChanges();
 
             //convert the Person object into PersonResponse type
-            return ConvertPersonToPersonResponse(person);
+            return person.ToPersonResponse();
 
 
         }
@@ -122,7 +55,13 @@ namespace Services
         //==============Get all persons===============
         public List<PersonResponse> GetAllPerson()
         {
-            return _persons.Select(p => ConvertPersonToPersonResponse(p)).ToList();
+            //SELECT * from Persons
+            return _db.Persons.ToList()
+            .Select(p => p.ToPersonResponse()).ToList();
+
+            //=========Stored Procedure==========
+            // return _db.sp_GetAllPersons()
+            // .Select(p => ConvertPersonToPersonResponse(p)).ToList();
         }
 
         //==============Get person by Id================
@@ -133,14 +72,14 @@ namespace Services
                 return null;
             }
 
-            Person? person = _persons.FirstOrDefault(c => c.PersonId == personId);
+            Person? person = _db.Persons.FirstOrDefault(c => c.PersonId == personId);
 
             if (person == null)
             {
                 return null;
             }
 
-            return ConvertPersonToPersonResponse(person);
+            return person.ToPersonResponse();
         }
 
         //===============Search persons by search key===============
@@ -250,7 +189,7 @@ namespace Services
             ValidationHelper.ModelValidation(personUpdateRequest);
 
             //Get matching person object to update
-            Person? matchingPerson = _persons.FirstOrDefault(p => p.PersonId == personUpdateRequest.PersonId);
+            Person? matchingPerson = _db.Persons.FirstOrDefault(p => p.PersonId == personUpdateRequest.PersonId);
 
             if (matchingPerson == null)
             {
@@ -266,7 +205,8 @@ namespace Services
             matchingPerson.Address = personUpdateRequest.Address;
             matchingPerson.ReceiveNewsLetters = personUpdateRequest.ReceiveNewsLetters;
 
-            return ConvertPersonToPersonResponse(matchingPerson);
+            _db.SaveChanges(); //UPDATE
+            return matchingPerson.ToPersonResponse();
         }
 
         //Delete a Person details by PersonId
@@ -277,14 +217,16 @@ namespace Services
                 throw new ArgumentNullException(nameof(personId));
             }
 
-            Person? person = _persons.FirstOrDefault(p => p.PersonId == personId);
+            Person? person = _db.Persons.FirstOrDefault(p => p.PersonId == personId);
 
             if (person == null)
             {
                 return false;
             }
 
-            _persons.RemoveAll(p => p.PersonId == personId);
+            _db.Persons.Remove(_db.Persons.First(p => p.PersonId == personId));
+            _db.SaveChanges();
+
             return true;
         }
     }

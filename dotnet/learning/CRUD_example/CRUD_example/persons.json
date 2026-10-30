@@ -1,0 +1,102 @@
+[
+  {
+    "PersonId": "c2b6d1ef-0001-4b22-8b01-000000000001",
+    "PersonName": "James Carter",
+    "Email": "james.carter@example.com",
+    "DateOfBirth": "1990-03-14T00:00:00",
+    "Gender": "Male",
+    "CountryId": "b1a5c0de-0001-4a11-9a01-000000000001",
+    "Address": "120 Main Street, New York",
+    "ReceiveNewsLetters": true
+  },
+  {
+    "PersonId": "c2b6d1ef-0002-4b22-8b01-000000000002",
+    "PersonName": "Emily Tremblay",
+    "Email": "emily.tremblay@example.com",
+    "DateOfBirth": "1988-07-22T00:00:00",
+    "Gender": "Female",
+    "CountryId": "b1a5c0de-0002-4a11-9a01-000000000002",
+    "Address": "45 Maple Avenue, Toronto",
+    "ReceiveNewsLetters": false
+  },
+  {
+    "PersonId": "c2b6d1ef-0003-4b22-8b01-000000000003",
+    "PersonName": "Oliver Smith",
+    "Email": "oliver.smith@example.com",
+    "DateOfBirth": "1995-11-05T00:00:00",
+    "Gender": "Male",
+    "CountryId": "b1a5c0de-0003-4a11-9a01-000000000003",
+    "Address": "9 Baker Street, London",
+    "ReceiveNewsLetters": true
+  },
+  {
+    "PersonId": "c2b6d1ef-0004-4b22-8b01-000000000004",
+    "PersonName": "Priya Sharma",
+    "Email": "priya.sharma@example.com",
+    "DateOfBirth": "1992-01-30T00:00:00",
+    "Gender": "Female",
+    "CountryId": "b1a5c0de-0004-4a11-9a01-000000000004",
+    "Address": "22 MG Road, Bengaluru",
+    "ReceiveNewsLetters": true
+  },
+  {
+    "PersonId": "c2b6d1ef-0005-4b22-8b01-000000000005",
+    "PersonName": "Rahim Uddin",
+    "Email": "rahim.uddin@example.com",
+    "DateOfBirth": "1985-09-18T00:00:00",
+    "Gender": "Male",
+    "CountryId": "b1a5c0de-0005-4a11-9a01-000000000005",
+    "Address": "77 Gulshan Avenue, Dhaka",
+    "ReceiveNewsLetters": false
+  },
+  {
+    "PersonId": "c2b6d1ef-0006-4b22-8b01-000000000006",
+    "PersonName": "Chloe Wilson",
+    "Email": "chloe.wilson@example.com",
+    "DateOfBirth": "1998-05-09T00:00:00",
+    "Gender": "Female",
+    "CountryId": "b1a5c0de-0006-4a11-9a01-000000000006",
+    "Address": "15 Beach Road, Sydney",
+    "ReceiveNewsLetters": true
+  },
+  {
+    "PersonId": "c2b6d1ef-0007-4b22-8b01-000000000007",
+    "PersonName": "Lukas Schneider",
+    "Email": "lukas.schneider@example.com",
+    "DateOfBirth": "1991-12-02T00:00:00",
+    "Gender": "Male",
+    "CountryId": "b1a5c0de-0007-4a11-9a01-000000000007",
+    "Address": "3 Berliner Strasse, Berlin",
+    "ReceiveNewsLetters": false
+  },
+  {
+    "PersonId": "c2b6d1ef-0008-4b22-8b01-000000000008",
+    "PersonName": "Camille Dubois",
+    "Email": "camille.dubois@example.com",
+    "DateOfBirth": "1994-04-27T00:00:00",
+    "Gender": "Female",
+    "CountryId": "b1a5c0de-0008-4a11-9a01-000000000008",
+    "Address": "18 Rue de Rivoli, Paris",
+    "ReceiveNewsLetters": true
+  },
+  {
+    "PersonId": "c2b6d1ef-0009-4b22-8b01-000000000009",
+    "PersonName": "Haruto Tanaka",
+    "Email": "haruto.tanaka@example.com",
+    "DateOfBirth": "1989-08-11T00:00:00",
+    "Gender": "Other",
+    "CountryId": "b1a5c0de-0009-4a11-9a01-000000000009",
+    "Address": "6 Shibuya, Tokyo",
+    "ReceiveNewsLetters": false
+  },
+  {
+    "PersonId": "c2b6d1ef-0010-4b22-8b01-000000000010",
+    "PersonName": "Sofia Almeida",
+    "Email": "sofia.almeida@example.com",
+    "DateOfBirth": "1996-10-20T00:00:00",
+    "Gender": "Female",
+    "CountryId": "b1a5c0de-0010-4a11-9a01-000000000010",
+    "Address": "50 Avenida Paulista, Sao Paulo",
+    "ReceiveNewsLetters": true
+  }
+]

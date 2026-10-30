@@ -6,8 +6,9 @@ namespace Entities;
 /// </summary>
 public class Country
 {
-[Key]
- public Guid CountryId {get; set;}
- public string? CountryName {get; set;}
+    [Key]
+    public Guid CountryId { get; set; }
+    public string? CountryName { get; set; }
+
+    // public virtual ICollection<Person>? persons { get; set; } 
 }
-    

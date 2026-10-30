@@ -1,0 +1,39 @@
+[
+  { "CountryId": "b1a5c0de-0001-4a11-9a01-000000000001", "CountryName": "USA" },
+  {
+    "CountryId": "b1a5c0de-0002-4a11-9a01-000000000002",
+    "CountryName": "Canada"
+  },
+  {
+    "CountryId": "b1a5c0de-0003-4a11-9a01-000000000003",
+    "CountryName": "United Kingdom"
+  },
+  {
+    "CountryId": "b1a5c0de-0004-4a11-9a01-000000000004",
+    "CountryName": "India"
+  },
+  {
+    "CountryId": "b1a5c0de-0005-4a11-9a01-000000000005",
+    "CountryName": "Bangladesh"
+  },
+  {
+    "CountryId": "b1a5c0de-0006-4a11-9a01-000000000006",
+    "CountryName": "Australia"
+  },
+  {
+    "CountryId": "b1a5c0de-0007-4a11-9a01-000000000007",
+    "CountryName": "Germany"
+  },
+  {
+    "CountryId": "b1a5c0de-0008-4a11-9a01-000000000008",
+    "CountryName": "France"
+  },
+  {
+    "CountryId": "b1a5c0de-0009-4a11-9a01-000000000009",
+    "CountryName": "Japan"
+  },
+  {
+    "CountryId": "b1a5c0de-0010-4a11-9a01-000000000010",
+    "CountryName": "Brazil"
+  }
+]
