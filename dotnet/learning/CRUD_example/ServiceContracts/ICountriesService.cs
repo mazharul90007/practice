@@ -12,18 +12,18 @@ public interface ICountriesService
     /// </summary>
     /// <param name="countryAddRequest">Country object to add</param>
     /// <returns>Country response object</returns>
-    CountryResponse AddCountry(CountryAddRequest? countryAddRequest);
+    Task<CountryResponse> AddCountry(CountryAddRequest? countryAddRequest);
 
     /// <summary>
     /// Returns all the countries from the list of countries
     /// </summary>
     /// <returns>All the countries from the list as List of CountryResponse</returns>
-    List<CountryResponse> GetAllCountries();
+    Task<List<CountryResponse>> GetAllCountries();
 
 /// <summary>
 /// Returns a country object based on the given country id
 /// </summary>
 /// <param name="CountryId"> CountryId (guid) to search</param>
 /// <returns>Matching country as CountryResponse object</returns>
-    CountryResponse? GetCountryByCountryId(Guid? CountryId);
+    Task<CountryResponse?> GetCountryByCountryId(Guid? CountryId);
 }

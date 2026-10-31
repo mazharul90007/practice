@@ -1,0 +1,12 @@
+
+appsettings.*.local.json
+appsettings.Local.json
+
+# Local SQLite / database files
+*.db
+*.db-shm
+*.db-wal
+
+# Test coverage report output (ReportGenerator)
+coverage/
+coveragereport/
