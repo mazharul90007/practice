@@ -12,11 +12,11 @@ namespace Services
     public class PersonsService : IPersonService
     {
         //private field
-        private readonly PersonsDbContext _db;
+        private readonly ApplicationDbContext _db;
         private readonly ICountriesService _countriesService;
 
         //constructor
-        public PersonsService(PersonsDbContext personsDbContext, ICountriesService countriesService)
+        public PersonsService(ApplicationDbContext personsDbContext, ICountriesService countriesService)
         {
             _db = personsDbContext;
             _countriesService = countriesService;

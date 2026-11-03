@@ -1,0 +1,16 @@
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: crud-sql
+    restart: unless-stopped
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "Sourabh@12345678"
+    ports:
+      - "1434:1433"
+    volumes:
+      - crud-sql-data:/var/opt/mssql
+
+volumes:
+  crud-sql-data:
+    external: true
