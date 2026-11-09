@@ -13,7 +13,7 @@ public interface IPersonsRepository
     /// </summary>
     /// <param name="person">Person object to add</param>
     /// <returns>Returns the person object after adding it to the table</returns>
-    Task<Person> addPerson(Person person);
+    Task<Person> AddPerson(Person person);
 
     /// <summary>
     /// Returns all persons in the data store
@@ -26,14 +26,14 @@ public interface IPersonsRepository
     /// </summary>
     /// <param name="personId">PersonId(guid) to search</param>
     /// <returns>A person object or null</returns>
-    Task<Person> GetPersonByPersonId(Guid personId);
+    Task<Person?> GetPersonByPersonId(Guid personId);
 
     /// <summary>
     /// Returns all person objects based on the given expression
     /// </summary>
     /// <param name="predicate">LINQ expression to check</param>
     /// <returns>All matching persons with given condition</returns>
-    Task<List<Person>> GetFilterdPeersons(Expression<Func<Person, bool>> predicate);
+    Task<List<Person>> GetFilteredPersons(Expression<Func<Person, bool>> predicate);
 
     /// <summary>
     /// Deletes a person object based on the person id
