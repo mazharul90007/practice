@@ -33,17 +33,17 @@ public class PersonsRepository : IPersonsRepository
 
     public async Task<List<Person>> GetAllPersons()
     {
-        return await _db.Persons.Include("Country").ToListAsync();
+        return await _db.Persons.Include(temp => temp.country).ToListAsync();
     }
 
     public async Task<List<Person>> GetFilteredPersons(Expression<Func<Person, bool>> predicate)
     {
-        return await _db.Persons.Include("Country").Where(predicate).ToListAsync();
+        return await _db.Persons.Include(temp => temp.country).Where(predicate).ToListAsync();
     }
 
     public async Task<Person?> GetPersonByPersonId(Guid personId)
     {
-        return await _db.Persons.Include("Country").FirstOrDefaultAsync(temp => temp.PersonId == personId);
+        return await _db.Persons.Include(temp => temp.country).FirstOrDefaultAsync(temp => temp.PersonId == personId);
     }
 
     public async Task<Person> UpdatePerson(Person person)

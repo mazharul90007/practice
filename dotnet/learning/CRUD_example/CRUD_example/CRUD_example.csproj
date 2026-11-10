@@ -1,10 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <ItemGroup>
+    <ProjectReference Include="../RepositoryContracts/RepositoryContracts.csproj" />
     <ProjectReference Include="../ServiceContracts/ServiceContracts.csproj" />
     <ProjectReference Include="../Services/Services.csproj" />
     <ProjectReference Include="..\Entities\Entities.csproj" />
     <ProjectReference Include="..\CRUDTest\CRUDTest.csproj" />
+    <ProjectReference Include="..\Repositories\Repositories.csproj" />
   </ItemGroup>
 
   <ItemGroup>
