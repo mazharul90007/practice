@@ -14,13 +14,11 @@ namespace Services
     {
         //private field
         private readonly IPersonsRepository _personsRepository;
-        private readonly ICountriesService _countriesService;
 
         //constructor
-        public PersonsService(IPersonsRepository personsDbContext, ICountriesService countriesService)
+        public PersonsService(IPersonsRepository personsRepository)
         {
-            _personsRepository = personsDbContext;
-            _countriesService = countriesService;
+            _personsRepository = personsRepository;
         }
 
 
